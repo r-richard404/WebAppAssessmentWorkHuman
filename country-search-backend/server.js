@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
+
 const app = express();
 const PORT = 3000;
 
@@ -10,10 +11,11 @@ app.use(express.json());
 const db = new sqlite3.Database('countries.db');
 
 app.get('/countries', (req, res) => {
-    const query = req.query.query?.toLowerCase();
+    const query = req.query.query ? req.query.query.toLowerCase() : '';
+    console.log('Received search query: ', query); //Log the incoming query
 
     if (query) {
-        db.all("SELECT name FROM countries WHERE LOWER(name) LIKE ?", ['%${query}%'], (err, rows) =>{
+        db.all("SELECT name FROM countries WHERE LOWER(name) LIKE ?", [`%${query}%`], (err, rows) =>{
             if (err) {
                 return res.status(500).json({error: err.message});
             }

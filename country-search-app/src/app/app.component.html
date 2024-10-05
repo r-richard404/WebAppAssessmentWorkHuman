@@ -1,9 +1,9 @@
 <div>
-    <input [(ngModel)]="searchQuery" (input)="searchCountries()" placeholder="Search for a country">
-    <ul>
-      <li *ngFor="let country of countries">{{ country }}</li>
-    </ul>
+    <input [(ngModel)]="searchTerm" (input)="searchCountries()" placeholder="Search for a country" />
+    <p>You are searching for: {{searchTerm}}</p>
 </div>
-
+<ul>
+  <li *ngFor="let country of countries">{{ country }}</li> <!-- Displays the list of countries -->
+</ul>
 
 

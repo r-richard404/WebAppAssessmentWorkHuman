@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core'; //onInit used for ....
 import { CountryService } from './services/country.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  styleUrl: './app.component.css',
+  imports: [FormsModule, HttpClientModule, CommonModule]
 })
+
 export class AppComponent implements OnInit {
 
  countries: string[] = [];
- searchQuery: string = '';
+ //searchQuery: string = '';
+ searchTerm: string = '';
 
  constructor(private countryService: CountryService) {}
 
@@ -23,7 +30,10 @@ export class AppComponent implements OnInit {
   });
 }
   searchCountries() {
-    this.countryService.searchCountries(this.searchQuery).subscribe((data) => {
+    //this.searchQuery
+    console.log('Searching for:', this.searchTerm); //log the search term
+    this.countryService.searchCountries(this.searchTerm).subscribe((data) => {
+      console.log('Search results:', data) //log the data returned
       this.countries = data;
     });
   }

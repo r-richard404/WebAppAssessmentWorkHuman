@@ -11,7 +11,7 @@ export class CountryService {
   private apiUrl = 'http://localhost:3000/countries';
 
   //injecting HttpClient into the constructor to make HTTP requests
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   //method to retrieve list of countries from backend
   getCountries(): Observable<string[]> {

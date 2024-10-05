@@ -28,27 +28,36 @@ frontend and Node.js with SQLite for the backend.
 1. Clone the repository:
     ```bash
     git clone https://github.com/r-richard404/WebAppAssessmentWorkHuman.git
+    ```
 
 2. Navigate to the project directory:
+    ```bash
     cd country-search-app
+    ```
 
 3. Install the dependencies for both frontend and backend
+    ```bash
     npm install
     cd country-search-backend
     npm install
+    ```
 
 ## Usage
 1. Start the backend server
+    ```bash
     node server.js
-    - The server will run on http://localhost:3000
+    ```
+    - The server will run on `http://localhost:3000`
 
 2. Start the Angular frontend:
+    ```bash
     ng serve
-    - Open your browser and navigate to http://localhost:4200 to view the application
+    ```
+    - Open your browser and navigate to `http://localhost:4200` to view the application
 
 ## API Endpoints
-- GET /countries: Retrieves a list of all countries.
-- GET /countries?query=countryName: Searches for countries based on a query. The search is case-insensitive
+- `GET /countries`: Retrieves a list of all countries.
+- `GET /countries?query=countryName`: Searches for countries based on a query. The search is case-insensitive
 
 ## API Endpoint Screenshot
 ![API Response Example](images/api-response-example.PNG)

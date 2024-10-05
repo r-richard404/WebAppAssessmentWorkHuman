@@ -1,5 +1,5 @@
 <div>
-    <input [(ngModel)]="seachQuery" (input)="searchCountries()" placeholder="Search for a country">
+    <input [(ngModel)]="searchQuery" (input)="searchCountries()" placeholder="Search for a country">
     <ul>
       <li *ngFor="let country of countries">{{ country }}</li>
     </ul>

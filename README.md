@@ -75,4 +75,5 @@ frontend and Node.js with SQLite for the backend.
 
 
 ![API Response Example: App Country Search](images/api-response-countries-list.PNG) ![App Country Search partial](images/api-response-countries-list-partial.PNG)
+
 **Description:** This screenshot shows the default application page where all the countries are listed. When querying for "united" the application correctly returns both "United Kingdom" and "United States of America", highlighting the matching capabilities of the search functionality within the front-end.

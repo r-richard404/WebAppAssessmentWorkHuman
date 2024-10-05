@@ -55,9 +55,11 @@ frontend and Node.js with SQLite for the backend.
 **Description:** This screenshot demonstrates the response from the Country Search API endpoint at `http://localhost:3000/countries` without any query parameter. It displays the complete list of countries retrieved from the database, showcasing the default functionality of the API when accessed without a search query.
 
 ![API Response Example: Case Insensitive Country Search](images/api-response-case-insensitive.PNG)
+
 **Description:** This screenshots demonstrates the API response when searching for a country with a case-insensitive query. The API returns the matching countries regardless of the letter case used in the query.
 
 ![API Response Example: Partial Country Search](images/api-response-partial-search.PNG)
+
 **Description:** This screenshot illustrates the API response when searching for the query "eden". The API successfully returns "Sweden", highlighting its capability to match substrings within country names.
 
 ![API Response Example: App Country Search](images/api-response-countries-list.PNG) ![App Country Search partial](images/api-response-countries-list-partial.PNG)

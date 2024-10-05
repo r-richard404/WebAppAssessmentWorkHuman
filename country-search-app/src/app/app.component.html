@@ -1,9 +1,13 @@
 <div>
+<!--Two-way data binding with searchTerm allowing real-time updates-->
     <input [(ngModel)]="searchTerm" (input)="searchCountries()" placeholder="Search for a country" />
+
+    <!--Displaying the current search term-->
     <p>You are searching for: {{searchTerm}}</p>
 </div>
 <ul>
-  <li *ngFor="let country of countries">{{ country }}</li> <!-- Displays the list of countries -->
+  <!--Looping through countries and displaying them-->
+  <li *ngFor="let country of countries">{{country}}</li>
 </ul>
 
 

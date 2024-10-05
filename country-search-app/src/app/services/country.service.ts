@@ -10,18 +10,18 @@ export class CountryService {
   //API URL for backend to provite list of countries
   private apiUrl = 'http://localhost:3000/countries';
 
-  //injecting HttpClient into the constructor to make HTTP requests
+  //Injecting HttpClient into the constructor to make HTTP requests
   constructor(private http: HttpClient) {}
 
-  //method to retrieve list of countries from backend
+  //Method to retrieve list of countries from backend
   getCountries(): Observable<string[]> {
-    //use GET request to apiUrl and return Obs string
+    //Use GET request to apiUrl and return Obs string
     return this.http.get<string[]>(this.apiUrl);
   }
 
-  //method to search for countries based on provided query
+  //Method to search for countries based on provided query
   searchCountries(query: string): Observable<string[]> {
-    //use GET request with a query parameter and return Obs string
+    //Use GET request with a query parameter and return Obs string
     return this.http.get<string[]>(`${this.apiUrl}?query=${query}`);
   }
 }

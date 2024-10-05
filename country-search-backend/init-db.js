@@ -1,9 +1,10 @@
+//Script to create db file with node.js
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('countries.db');
 
-// initialises database and insert countries into countries.db file
+//Initialises database and insert countries into countries.db file
 db.serialize(() => {
-    // create countries table if it doesn't exist
+    //Create countries table if it doesn't exist
     db.run(`CREATE TABLE IF NOT EXISTS countries (
         id INTEGER PRIMARY KEY AUTOINCREMENT, 
         name TEXT NOT NULL
@@ -19,12 +20,11 @@ db.serialize(() => {
         "United Kingdom", "United States of America", "Vietnam",
         "Zambia"
     ];
-
+    //Insert values into empty database file
     const stmt = db.prepare("INSERT INTO countries (name) VALUES (?)");
     countries.forEach(country => {
         stmt.run(country);
     });
     stmt.finalize();
 });
-
 db.close();

@@ -13,6 +13,11 @@ app.use(express.json());
 //Create new database instance
 const db = new sqlite3.Database('countries.db');
 
+// Root route that redirects to /countries
+app.get('/', (req, res) => {
+    res.redirect('/countries');
+});
+
 //Endpoint to handle GET requests for countries
 app.get('/countries', (req, res) => {
     //Retrieving the query param and converting it to lowercase
@@ -44,5 +49,5 @@ app.get('/countries', (req, res) => {
 
 //Starting server and listen on the defined port
 app.listen(PORT, () => {
-    console.log('Server is running on http://localhost:${PORT}');
+    console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core'; //onInit used for ....
-import { CountryService } from './services/country.service';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core'; //onInit used for to load countries right away when app starts
+import { CountryService } from './services/country.service'; //Custom service imported to make API calls
+import { FormsModule } from '@angular/forms'; //Needed to bind data between input box and searchTerm
+import { HttpClientModule } from '@angular/common/http'; //Needed to make HTTP requests
+import { CommonModule } from '@angular/common'; //Needed to use ngIf and ngFor, etc.
 
-//Metadata
+//Metadata making it recognisable as an Angular component
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
